@@ -26,7 +26,7 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .greeting {
     text-align: center;
     margin-top: 50px;
