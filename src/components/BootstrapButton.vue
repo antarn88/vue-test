@@ -4,8 +4,6 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, defineEmits } from 'vue';
-
 const emit = defineEmits(['click']); // defineEmits(['click', 'hover', 'focus']);
 
 // Input propok, amiket definiálunk

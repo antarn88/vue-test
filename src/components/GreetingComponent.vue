@@ -17,7 +17,7 @@
 
 <script lang="ts" setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue';
-import type { ClickData } from '~/models/ClickData'; // Típus importálás
+import type { ClickData } from '~/models/ClickData';
 
 const title = ref<string>('Üdvözöljük a Vue.js-ban!');
 const message = ref<string>('Ez egy egyszerű komponens példája.');

@@ -1,0 +1,4 @@
+<template>
+  <BSHeader />
+  <NuxtPage />
+</template>
