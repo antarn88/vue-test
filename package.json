@@ -8,8 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint .",
-    "lint-fix": "eslint . --fix"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue",
+    "lint-fix": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
