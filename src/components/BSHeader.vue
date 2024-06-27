@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
-      <NuxtLink to="/" class="navbar-brand cursor-pointer">Vue.js teszt alkalmazás</NuxtLink>
+      <NuxtLink to="/" class="navbar-brand cursor-pointer" exact-active-class="active">Vue.js teszt alkalmazás</NuxtLink>
       <button
         class="navbar-toggler"
         type="button"
@@ -15,9 +15,10 @@
       </button>
       <div id="navbarNavAltMarkup" class="collapse navbar-collapse">
         <div class="navbar-nav">
-          <NuxtLink to="/" class="nav-link" exact>Home</NuxtLink>
-          <NuxtLink to="/features" class="nav-link">Features</NuxtLink>
-          <NuxtLink to="/pricing" class="nav-link">Pricing</NuxtLink>
+          <!-- exact-active-class="active" Így aktív marad mindig a menüpont, amin jelenleg állunk-->
+          <NuxtLink to="/" class="nav-link" exact-active-class="active" exact>Home</NuxtLink>
+          <NuxtLink to="/features" class="nav-link" active-class="active">Features</NuxtLink>
+          <NuxtLink to="/pricing" class="nav-link" active-class="active">Pricing</NuxtLink>
         </div>
       </div>
     </div>
