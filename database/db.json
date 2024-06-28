@@ -1,0 +1,8 @@
+{
+  "users": [
+    { "id": "1", "name": "Benedek Bence", "email": "benedekbence@hotmail.com", "age": 20 },
+    { "id": "2", "name": "Nagy Csaba", "email": "csabi@freemail.hu", "age": 30 },
+    { "id": "3", "name": "Gáspár Zoltán", "email": "gzoltan@citromail.hu", "age": 42 },
+    { "id": "4", "name": "Bor Tihamér", "email": "tiha@mail.com", "age": 18 }
+  ]
+}

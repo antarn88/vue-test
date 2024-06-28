@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue",
-    "lint-fix": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix"
+    "lint-fix": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix",
+    "server": "json-server ./database/db.json --port 3001"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
