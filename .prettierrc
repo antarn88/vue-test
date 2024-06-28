@@ -7,7 +7,6 @@
   "trailingComma": "all",
   "bracketSpacing": true,
   "jsxBracketSameLine": false,
-  "arrowParens": "avoid",
   "htmlWhitespaceSensitivity": "css",
   "endOfLine": "lf",
   "vueIndentScriptAndStyle": true
