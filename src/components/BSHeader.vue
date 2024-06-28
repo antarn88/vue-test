@@ -28,8 +28,8 @@
 <script lang="ts" setup></script>
 
 <style lang="scss" scoped>
-.cursor-pointer {
-  cursor: pointer;
-  user-select: none;
-}
+  .cursor-pointer {
+    cursor: pointer;
+    user-select: none;
+  }
 </style>

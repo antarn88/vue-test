@@ -14,8 +14,10 @@
       <div class="col-6">
         <ul>
           <h5>Nevek kiírása ciklussal</h5>
-          <!--v-for -> Angularban ez az ngFor -->
-          <p v-for="name in names" :key="name.id" class="mb-0">{{ name.name }}</p>
+          <!-- v-for -> Angularban ez az ngFor -->
+          <p v-for="name in names" :key="name.id" class="mb-0">
+            {{ name.name }}
+          </p>
         </ul>
       </div>
     </div>
@@ -23,17 +25,17 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+  import { ref } from 'vue';
 
-const isVisible = ref(true);
-const names = ref([
-  { id: '1', name: 'Gipsz Jakab' },
-  { id: '2', name: 'Nagy Béla' },
-  { id: '3', name: 'Kiss Zsolt' },
-  { id: '4', name: 'Szabó Ernő' },
-]);
+  const isVisible = ref(true);
+  const names = ref([
+    { id: '1', name: 'Gipsz Jakab' },
+    { id: '2', name: 'Nagy Béla' },
+    { id: '3', name: 'Kiss Zsolt' },
+    { id: '4', name: 'Szabó Ernő' },
+  ]);
 
-function toggleVisibility(): void {
-  isVisible.value = !isVisible.value;
-}
+  function toggleVisibility(): void {
+    isVisible.value = !isVisible.value;
+  }
 </script>
