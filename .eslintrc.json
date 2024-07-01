@@ -38,7 +38,8 @@
     "prettier/prettier": [
       "error",
       {
-        "arrowParens": "always"
+        "arrowParens": "always",
+        "singleQuote": false
       }
     ]
   }

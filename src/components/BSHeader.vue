@@ -16,9 +16,8 @@
       <div id="navbarNavAltMarkup" class="collapse navbar-collapse">
         <div class="navbar-nav">
           <!-- exact-active-class="active" Így aktív marad mindig a menüpont, amin jelenleg állunk-->
-          <NuxtLink to="/" class="nav-link" exact-active-class="active" exact>Home</NuxtLink>
-          <NuxtLink to="/features" class="nav-link" active-class="active">Features</NuxtLink>
-          <NuxtLink to="/pricing" class="nav-link" active-class="active">Pricing</NuxtLink>
+          <NuxtLink to="/" class="nav-link" exact exact-active-class="active">Kezdőlap</NuxtLink>
+          <NuxtLink to="/users" class="nav-link" exact exact-active-class="active">Felhasználók</NuxtLink>
         </div>
       </div>
     </div>
