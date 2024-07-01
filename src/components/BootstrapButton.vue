@@ -4,7 +4,7 @@
 </template>
 
 <script lang="ts" setup>
-  const emit = defineEmits(['click']); // defineEmits(['click', 'hover', 'focus']);
+  const emit = defineEmits(["click"]); // defineEmits(['click', 'hover', 'focus']);
 
   // Input propok, amiket definiálunk
   defineProps({
@@ -14,21 +14,21 @@
     },
     color: {
       type: String,
-      default: 'primary',
+      default: "primary",
     },
     size: {
       type: String,
-      default: 'md',
+      default: "md",
     },
   });
 
   function emitClick(): void {
     const customData = {
-      message: 'Output adat szövege',
+      message: "Output adat szövege",
       timestamp: new Date().toISOString(),
     };
 
-    emit('click', customData);
+    emit("click", customData);
   }
 </script>
 

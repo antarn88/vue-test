@@ -35,14 +35,14 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, computed } from 'vue';
+  import { ref, computed } from "vue";
 
   const isVisible = ref(true);
   const names = ref([
-    { id: '1', name: 'Gipsz Jakab' },
-    { id: '2', name: 'Nagy Béla' },
-    { id: '3', name: 'Kiss Zsolt' },
-    { id: '4', name: 'Szabó Ernő' },
+    { id: "1", name: "Gipsz Jakab" },
+    { id: "2", name: "Nagy Béla" },
+    { id: "3", name: "Kiss Zsolt" },
+    { id: "4", name: "Szabó Ernő" },
   ]);
 
   const amounts = ref([145, 787, 1215, 1219, 78787]);
@@ -53,9 +53,9 @@
       return `${amount.toString()[0]} ${amount.toString().slice(-3)} Ft`;
     }
 
-    const formatter = new Intl.NumberFormat('hu-HU', {
-      style: 'currency',
-      currency: 'HUF',
+    const formatter = new Intl.NumberFormat("hu-HU", {
+      style: "currency",
+      currency: "HUF",
       maximumFractionDigits: 0,
     });
 

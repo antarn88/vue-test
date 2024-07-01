@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  srcDir: 'src',
+  srcDir: "src",
   devtools: { enabled: true },
-  css: ['@/assets/main.scss'],
-  plugins: [{ src: '~/plugins/bootstrap.js', mode: 'client' }],
+  css: ["@/assets/main.scss"],
+  plugins: [{ src: "~/plugins/bootstrap.js", mode: "client" }],
 });
