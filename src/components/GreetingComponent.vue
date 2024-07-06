@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
-    <div class="row mt-5">
+  <div class="container p-3 mt-5">
+    <h1 class="text-center text-success mb-5">Üdvözlet a Vue.js tesztalkalmazásban!</h1>
+
+    <div class="row">
       <div class="col-6">
         <button class="btn btn-primary" @click="toggleVisibility">Toggle Visibility</button>
 
@@ -36,6 +38,7 @@
 
 <script lang="ts" setup>
   import { ref, computed } from "vue";
+  import { $fetch } from "ofetch";
 
   const isVisible = ref(true);
   const names = ref([
@@ -62,7 +65,14 @@
     return formatter.format(amount);
   };
 
-  function toggleVisibility(): void {
+  async function toggleVisibility(): Promise<void> {
     isVisible.value = !isVisible.value;
+
+    testFetch();
+  }
+
+  async function testFetch(): Promise<void> {
+    const data = await $fetch("https://jsonplaceholder.typicode.com/todos/1");
+    console.log("Resp:", data);
   }
 </script>

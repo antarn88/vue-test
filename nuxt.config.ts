@@ -3,5 +3,8 @@ export default defineNuxtConfig({
   srcDir: "src",
   devtools: { enabled: true },
   css: ["@/assets/main.scss"],
-  plugins: [{ src: "~/plugins/bootstrap.js", mode: "client" }],
+  plugins: [
+    { src: "~/plugins/bootstrap.js", mode: "client" },
+    { src: "~/plugins/toast.js", mode: "client" },
+  ],
 });

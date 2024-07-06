@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark sticky-top" data-bs-theme="dark">
     <div class="container-fluid">
       <NuxtLink to="/" class="navbar-brand cursor-pointer" exact-active-class="active">Vue.js teszt alkalmazás</NuxtLink>
       <button

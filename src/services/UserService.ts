@@ -1,18 +1,24 @@
 import axios from "axios";
+import { OrderType } from "~/enums/OrderType";
+import type { ApiResponse } from "~/models/ApiResponse";
+import type { PagingOptions } from "~/models/PagingOptions";
 import type { User } from "~/models/User";
 
 const API_URL = "http://localhost:3001";
 
 export default {
-  async getUsers(): Promise<User[]> {
-    try {
-      const response = await axios.get(`${API_URL}/users`);
+  async getUsers(pagingOptions: PagingOptions): Promise<ApiResponse> {
+    const response = await axios.get(`${API_URL}/users`, {
+      params: {
+        ...pagingOptions,
+        _sort: `${pagingOptions.order === OrderType.DESC ? "-" : ""}${pagingOptions._sort}`,
+        order: undefined,
+      },
+    });
 
-      return response.data;
-    } catch (error) {
-      console.error("Error fetching users:", error);
-      throw error;
-    }
+    // await new Promise((resolve) => setTimeout(resolve, 100));
+
+    return response.data as ApiResponse;
   },
 
   async getUserById(id: string | null): Promise<User> {
@@ -22,37 +28,29 @@ export default {
 
     const response = await axios.get(`${API_URL}/users/${id}`);
 
+    // await new Promise((resolve) => setTimeout(resolve, 200));
+
     return response.data;
   },
 
   async createUser(user: Omit<User, "id">): Promise<User> {
-    try {
-      const response = await axios.post(`${API_URL}/users`, user);
+    const response = await axios.post(`${API_URL}/users`, user);
 
-      return response.data;
-    } catch (error) {
-      console.error("Error creating user:", error);
-      throw error;
-    }
+    // await new Promise((resolve) => setTimeout(resolve, 200));
+
+    return response.data;
   },
 
   async updateUser(id: string, user: Partial<User>): Promise<User> {
-    try {
-      const response = await axios.put(`${API_URL}/users/${id}`, user);
+    const response = await axios.put(`${API_URL}/users/${id}`, user);
+    // await new Promise((resolve) => setTimeout(resolve, 200));
 
-      return response.data;
-    } catch (error) {
-      console.error("Error updating user:", error);
-      throw error;
-    }
+    return response.data;
   },
 
   async deleteUser(id: string): Promise<void> {
-    try {
-      await axios.delete(`${API_URL}/users/${id}`);
-    } catch (error) {
-      console.error("Error deleting user:", error);
-      throw error;
-    }
+    await axios.delete(`${API_URL}/users/${id}`);
+
+    // await new Promise((resolve) => setTimeout(resolve, 200));
   },
 };
