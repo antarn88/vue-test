@@ -10,12 +10,13 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue",
     "lint-fix": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix",
-    "server": "json-server ./database/db.json --port 3001"
+    "server": "json-server-auth ./database/db.json --port 3001"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
+    "jwt-decode": "^4.0.0",
     "nuxt": "^3.12.3",
     "vee-validate": "^4.13.1",
     "vue": "^3.4.31",

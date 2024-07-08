@@ -38,7 +38,6 @@
 
 <script lang="ts" setup>
   import { ref, computed } from "vue";
-  import { $fetch } from "ofetch";
 
   const isVisible = ref(true);
   const names = ref([
@@ -67,12 +66,5 @@
 
   async function toggleVisibility(): Promise<void> {
     isVisible.value = !isVisible.value;
-
-    testFetch();
-  }
-
-  async function testFetch(): Promise<void> {
-    const data = await $fetch("https://jsonplaceholder.typicode.com/todos/1");
-    console.log("Resp:", data);
   }
 </script>

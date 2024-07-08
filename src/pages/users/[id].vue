@@ -13,7 +13,7 @@
         <form @submit="onSubmit">
           <!-- Név -->
           <div class="mb-3">
-            <label for="name" class="form-label">Név</label>
+            <label for="name" class="form-label">Név *</label>
             <Field v-slot="{ errors, field }" name="name">
               <input v-bind="field" id="name" type="text" name="name" class="form-control" :class="{ 'is-invalid': errors[0] }" />
             </Field>
@@ -22,16 +22,32 @@
 
           <!-- E-mail -->
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label">Email *</label>
             <Field v-slot="{ errors, field }" name="email">
               <input v-bind="field" id="email" type="email" name="email" class="form-control" :class="{ 'is-invalid': errors[0] }" />
             </Field>
             <ErrorMessage name="email" class="invalid-feedback" />
           </div>
 
+          <!-- Jelszó -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Jelszó *</label>
+            <Field v-slot="{ errors, field }" name="password">
+              <input
+                v-bind="field"
+                id="password"
+                type="password"
+                name="password"
+                class="form-control"
+                :class="{ 'is-invalid': errors[0] }"
+              />
+            </Field>
+            <ErrorMessage name="password" class="invalid-feedback" />
+          </div>
+
           <!-- Kor -->
           <div class="mb-3">
-            <label for="age" class="form-label">Kor</label>
+            <label for="age" class="form-label">Kor *</label>
             <Field v-slot="{ errors, field }" name="age">
               <input v-bind="field" id="age" type="number" name="age" class="form-control" :class="{ 'is-invalid': errors[0] }" />
             </Field>
@@ -88,6 +104,7 @@
       .min(1, "Minimum érték: 1")
       .max(150, "Maximum érték: 150")
       .typeError("A kor megadása kötelező!"),
+    password: yup.string().required("A jelszó megadása kötelező!"),
   });
 
   // Form kezelése
@@ -96,6 +113,7 @@
     initialValues: {
       name: "",
       email: "",
+      password: "",
       age: undefined,
     },
   });

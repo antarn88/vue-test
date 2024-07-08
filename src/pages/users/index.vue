@@ -156,13 +156,7 @@
                     </div>
                     <nav aria-label="Page navigation">
                       <ul class="pagination mb-0">
-                        <li
-                          class="page-item"
-                          :class="{
-                            disabled: currentPage === 1,
-                            'not-allowed': currentPage === 1,
-                          }"
-                        >
+                        <li class="page-item">
                           <a class="page-link text-dark cursor-pointer user-select-none" aria-label="First" @click.prevent="goToFirstPage">
                             <span aria-hidden="true">&laquo;&laquo;</span>
                           </a>
@@ -171,10 +165,6 @@
                           <a
                             class="page-link text-dark cursor-pointer user-select-none"
                             aria-label="Previous"
-                            :class="{
-                              disabled: currentPage === 1,
-                              'not-allowed': currentPage === 1,
-                            }"
                             @click.prevent="goToPreviousPage"
                           >
                             <span aria-hidden="true">&laquo;</span>
@@ -197,24 +187,12 @@
                             >
                           </li>
                         </template>
-                        <li
-                          class="page-item"
-                          :class="{
-                            disabled: currentPage === totalPages,
-                            'not-allowed': currentPage === totalPages,
-                          }"
-                        >
+                        <li class="page-item">
                           <a class="page-link cursor-pointer user-select-none" aria-label="Next" @click.prevent="goToNextPage">
                             <span aria-hidden="true">&raquo;</span>
                           </a>
                         </li>
-                        <li
-                          class="page-item"
-                          :class="{
-                            disabled: currentPage === totalPages,
-                            'not-allowed': currentPage === totalPages,
-                          }"
-                        >
+                        <li class="page-item">
                           <a class="page-link text-dark cursor-pointer user-select-none" aria-label="Last" @click.prevent="goToLastPage">
                             <span aria-hidden="true">&raquo;&raquo;</span>
                           </a>
@@ -310,22 +288,23 @@
 
       const usersResponse = await UserService.getUsers({
         _page: currentPage.value,
-        _per_page: currentPerPage.value,
+        _limit: currentPerPage.value,
         _sort: sortType.value,
-        order: orderType.value,
+        _order: orderType.value,
       });
 
-      totalUserListLength.value = usersResponse.items;
-      users.value = usersResponse.data;
+      // totalUserListLength.value = usersResponse.length;
+      totalUserListLength.value = 130; // Beégetve fix tömbméret, mert a JSON szerver régi verziója nem támogatja.
+      users.value = usersResponse as User[];
       isError.value = false;
 
       if (!users.value.length) {
-        isEmptyList.value = true;
+        // isEmptyList.value = true;
       }
 
       updateDisplayedPages();
     } catch (error) {
-      isError.value = true;
+      // isError.value = true;
     } finally {
       isLoading.value = false;
     }

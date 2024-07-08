@@ -3,7 +3,7 @@ import type { OrderType } from "~/enums/OrderType";
 
 export interface PagingOptions {
   _page?: number;
-  _per_page?: number;
+  _limit?: number;
   _sort?: SortType;
-  order?: OrderType;
+  _order?: OrderType;
 }

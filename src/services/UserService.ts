@@ -1,24 +1,16 @@
 import axios from "axios";
-import { OrderType } from "~/enums/OrderType";
-import type { ApiResponse } from "~/models/ApiResponse";
 import type { PagingOptions } from "~/models/PagingOptions";
 import type { User } from "~/models/User";
 
 const API_URL = "http://localhost:3001";
 
 export default {
-  async getUsers(pagingOptions: PagingOptions): Promise<ApiResponse> {
-    const response = await axios.get(`${API_URL}/users`, {
-      params: {
-        ...pagingOptions,
-        _sort: `${pagingOptions.order === OrderType.DESC ? "-" : ""}${pagingOptions._sort}`,
-        order: undefined,
-      },
-    });
+  async getUsers(params: PagingOptions): Promise<User[]> {
+    const response = await axios.get(`${API_URL}/users`, { params });
 
     // await new Promise((resolve) => setTimeout(resolve, 100));
 
-    return response.data as ApiResponse;
+    return response.data;
   },
 
   async getUserById(id: string | null): Promise<User> {
@@ -30,11 +22,20 @@ export default {
 
     // await new Promise((resolve) => setTimeout(resolve, 200));
 
-    return response.data;
+    return {
+      ...response.data,
+      password: undefined,
+    };
+  },
+
+  async getUserByEmail(email: string): Promise<User> {
+    const response = await axios.get(`${API_URL}/users?email=${email}`);
+
+    return response.data[0];
   },
 
   async createUser(user: Omit<User, "id">): Promise<User> {
-    const response = await axios.post(`${API_URL}/users`, user);
+    const response = await axios.post(`${API_URL}/register`, user);
 
     // await new Promise((resolve) => setTimeout(resolve, 200));
 
