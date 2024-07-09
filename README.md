@@ -1,75 +1,16 @@
-# Nuxt 3 Minimal Starter
+# Vue.js tesztalkalmazás
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Az alkalmazás JSON server-t használ, ha nincs telepítve, akkor telepítsük:
 
-## Setup
+`npm i -g json-server@0.17.4 json-server-auth`
 
-Make sure to install the dependencies:
 
-```bash
-# npm
-npm install
 
-# pnpm
-pnpm install
+## Szerver indítása
 
-# yarn
-yarn install
+`npm run server`
 
-# bun
-bun install
-```
 
-## Development Server
+## Alkalmazás indítása
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+`npm run dev`
