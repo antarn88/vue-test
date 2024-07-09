@@ -694,18 +694,11 @@
       "id": "gVICBpu"
     },
     {
-      "email": "test@test.hu",
-      "password": "$2a$10$l52Y2gWtAc6VEABFyOZA7.dEJKQaVYXxd5JpcAJpIcCfFuH1uPXgy",
       "name": "TEST",
+      "email": "test@test.hu",
+      "password": "$2a$10$JEbmoktZOzrlxeNEiH0qiuPKgQwSyAyd4b3QrA6Yknh1JFbaon8RC",
       "age": 50,
       "id": "3lie7Dl"
-    },
-    {
-      "email": "ocsi@pocse.edu",
-      "password": "$2a$10$U0IjPHGEl34XmpDz29/VxOMyfh.5usoFsRIsZ./e/L.0ZFztZhptS",
-      "name": "Öcsi",
-      "age": 70,
-      "id": "sUcUucl"
     }
   ]
 }
